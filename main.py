@@ -58,7 +58,7 @@ def main():
     model = HybridModel(input_dim=X_train.shape[-1], output_dim=Y_train.shape[-1])
 
     # 4. Train
-    train_model(model, train_loader, val_loader, epochs=30, lr=1e-3, device="cuda")
+    train_model(model, train_loader, val_loader, epochs=30, lr=1e-4, device="cuda")
 
     # 5. Evaluate
     evaluate_model(model, test_loader)
