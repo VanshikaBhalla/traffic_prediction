@@ -1,0 +1,7 @@
+# Ignore dataset files
+traffic_prediction/data/*.h5
+traffic_prediction/data/*.npy
+
+# Python cache
+__pycache__/
+*.pyc
