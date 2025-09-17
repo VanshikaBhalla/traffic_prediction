@@ -21,9 +21,9 @@ def train_model(
     optimizer = optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss()
 
-    # 🔧 Learning Rate Scheduler
+    # 🔧 Learning Rate Scheduler (no verbose for compatibility)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode="min", factor=0.5, patience=2, verbose=True
+        optimizer, mode="min", factor=0.5, patience=2
     )
 
     best_val_loss = float("inf")
@@ -76,4 +76,3 @@ def train_model(
     # Load best model before returning
     model.load_state_dict(torch.load(save_path))
     return model
-
